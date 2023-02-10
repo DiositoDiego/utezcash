@@ -27,7 +27,7 @@ export default function App() {
         />
       </SafeAreaView>
         <Text style={styles.resultados}>Resultados</Text>
-        <BtnCalculate/>
+        <BtnCalculate fnCalc={calcular}/>
     </View>
   );
 }

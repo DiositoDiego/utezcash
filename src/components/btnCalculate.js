@@ -2,10 +2,13 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import React from 'react'
 import colors from '../utils/colors';
 
-export default function btnCalculate() {
+export default function btnCalculate(props) {
+  console.log(props);
   return (
     <View style={styles.viewCalculate}>
-      <TouchableOpacity style={styles.touchable}>
+      <TouchableOpacity style={styles.touchable}
+      onPress={props.fnCalc}
+      >
         <Text style={styles.btnTitle}>Calcular</Text>
       </TouchableOpacity>
     </View>
