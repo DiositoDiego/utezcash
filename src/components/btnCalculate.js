@@ -4,10 +4,11 @@ import colors from '../utils/colors';
 
 export default function btnCalculate(props) {
   console.log(props);
+  const {fnCalc} = props;
   return (
     <View style={styles.viewCalculate}>
       <TouchableOpacity style={styles.touchable}
-      onPress={props.fnCalc}
+      onPress={fnCalc}
       >
         <Text style={styles.btnTitle}>Calcular</Text>
       </TouchableOpacity>

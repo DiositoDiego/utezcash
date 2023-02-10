@@ -11,7 +11,9 @@ export default function App() {
   const [meses, setMeses] = useState(null);
 
   const calcular = () => {
-    console.log(`cant: ${cantidad}\ninteres: ${interes}\nmeses: ${meses}`);
+    console.log(`cant: ${cantidad}`);
+    console.log(`interes: ${interes}`);
+    console.log(`meses: ${meses}`);
   }
 
   return (
