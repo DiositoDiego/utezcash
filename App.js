@@ -15,9 +15,10 @@ export default function App() {
   }
 
   return (
-    <View style={styles.comodin}>
+    <View style={{height:'100%'}}>
   {/* <StatusBar barStyle={'light-content'}/> */}
       <SafeAreaView style={styles.safeArea}>
+      <View style={styles.comodin}></View>
         <Text style={styles.titleApp}>UTEZ CASH</Text>
         <Form
           setCantidad={setCantidad}
@@ -25,12 +26,8 @@ export default function App() {
           setMeses={setMeses}
         />
       </SafeAreaView>
-      <View>
         <Text style={styles.resultados}>Resultados</Text>
-      </View>
-      <View>
         <BtnCalculate/>
-      </View>
     </View>
   );
 }
@@ -43,6 +40,8 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 30,
     position: "absolute",
     zIndex: -1,
+    height: 200,
+    
   },
   safeArea: {
     height: 290,

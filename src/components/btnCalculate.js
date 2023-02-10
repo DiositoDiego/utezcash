@@ -30,5 +30,11 @@ const styles = StyleSheet.create({
     height: 100,
     backgroundColor: colors.C_PRIMARIO,
     borderTopRightRadius: 30,
+    borderTopLeftRadius: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    bottom: 0,
+    position: 'absolute',
   }
 });
