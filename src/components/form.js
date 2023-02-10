@@ -6,7 +6,7 @@ import RNPickerSelect from 'react-native-picker-select';
 export default function Form(props){
     console.log(props);
     
-    const {setCantidad, setInteres, setMeses} = props;
+    const {setCantidad, setInteres, setPlazos} = props;
 
     return(
         <View style={estilito.viewForm}>
@@ -31,7 +31,7 @@ export default function Form(props){
                 label: "Selecciona los meses",
                 value: null
             }}
-            onValueChange={(value) => setMeses(value)}
+            onValueChange={(value) => setPlazos(value)}
             items={[
                 { label: '3 Meses', value: '3' },
                 { label: '6 Meses', value: '6' },

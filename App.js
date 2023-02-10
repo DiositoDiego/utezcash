@@ -4,16 +4,37 @@ import colors from './src/utils/colors'
 import Form from './src/components/form'
 import { useState } from "react"
 import BtnCalculate from './src/components/btnCalculate'
+import Results from './src/components/Results';
 
 export default function App() {
   const [cantidad, setCantidad] = useState(null);
   const [interes, setInteres] = useState(null);
-  const [meses, setMeses] = useState(null);
+  const [plazos, setPlazos] = useState(null);
+  const [prestamo, setPrestamo] = useState(null);
+  const [errors, setErrors] = useState("");
+
+  const reset = () => {
+    setErrors("");
+  }
 
   const calcular = () => {
-    console.log(`cant: ${cantidad}`);
-    console.log(`interes: ${interes}`);
-    console.log(`meses: ${meses}`);
+    if(!cantidad) {
+      setErrors("Ingrese la cantidad");
+    } else if(!interes) {
+      setErrors("Ingrese el interes");
+    } else if(!plazos) {
+      setErrors("Ingrese los plazos");
+    } else {
+      const inte = (interes / 100);
+      const pagos = (cantidad / ((1 - Math.pow(inte + 1, -plazos)) / inte));
+      setPrestamo({
+        pagoMes: pagos.toFixed(2),
+        pagoTotal: (pagos * plazos).toFixed(2),
+      });
+      console.log(prestamo);
+      reset();
+    }
+    
   }
 
   return (
@@ -25,10 +46,10 @@ export default function App() {
         <Form
           setCantidad={setCantidad}
           setInteres={setInteres}
-          setMeses={setMeses}
+          setPlazos={setPlazos}
         />
       </SafeAreaView>
-        <Text style={styles.resultados}>Resultados</Text>
+        <Results errors={errors} cantidad={cantidad} interes={interes} plazos={plazos} prestamo={prestamo}/>
         <BtnCalculate fnCalc={calcular}/>
     </View>
   );

@@ -3,7 +3,6 @@ import React from 'react'
 import colors from '../utils/colors';
 
 export default function btnCalculate(props) {
-  console.log(props);
   const {fnCalc} = props;
   return (
     <View style={styles.viewCalculate}>
