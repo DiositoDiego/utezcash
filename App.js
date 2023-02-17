@@ -47,7 +47,7 @@ export default function App() {
 
   return (
     <View style={{height:'100%'}}>
-  {/* <StatusBar barStyle={'light-content'}/> */}
+      {/* <StatusBar barStyle={'light-content'}/> */}
       <SafeAreaView style={styles.safeArea}>
       <View style={styles.comodin}></View>
         <Text style={styles.titleApp}>UTEZ CASH</Text>
