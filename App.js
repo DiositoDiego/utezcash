@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { Button, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import colors from './src/utils/colors'
 import Form from './src/components/form'
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import BtnCalculate from './src/components/btnCalculate'
 import Results from './src/components/Results';
 
@@ -12,6 +12,14 @@ export default function App() {
   const [plazos, setPlazos] = useState(null);
   const [prestamo, setPrestamo] = useState(null);
   const [errors, setErrors] = useState("");
+
+  useEffect(() => {
+    if(cantidad && interes && plazos){
+      calcular();
+    } else {
+      reset();
+    }
+  }, [cantidad, interes, plazos])
 
   const reset = () => {
     setErrors("");
